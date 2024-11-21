@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haiqa Boutique - Collection</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+     * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Royal Navbar */
+header {
+    background-color: rgb(178, 14, 129);
+    color: #fff;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    margin-left: 30px;
+    font-family: 'Georgia', serif;
+    font-size: 2.5em;
+    color: #fff5e1;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin-right: 30px;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff5e1;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;
+}
+
+/* Hero Section */
+#home {
+    background-image: url('../img/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content h2 {
+    font-size: 3.5em;
+    font-family: 'Georgia', serif;
+}
+
+.hero-content p {
+    font-size: 1.5em;
+    margin: 20px 0;
+}
+
+.btn {
+    background-color: #ffcc00;
+    color: #333;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #d4a600;
+}
+#collection {
+    padding: 50px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+#collection h2 {
+    font-family: 'Georgia', serif;
+    font-size: 3em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Gallery Styles */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-items: center;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Footer */
+footer {
+    background-color: rgb(178, 14, 129);
+    color: #fff5e1;
+    text-align: center;
+    padding: 20px 0;
+    font-family: 'Georgia', serif;
+}
+
+.social-links {
+    margin: 15px 0;
+}
+
+.social-links a {
+    color: #fff5e1;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+.social-links a:hover {
+    color: #ffcc00;
+}
+/* Footer Styles */
+footer {
+    background-color:rgb(178, 14, 129); /* Dark background */
+    color: #fff; /* White text color */
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around; /* Space out the content */
+    align-items: center; /* Center vertically */
+    margin-bottom: 20px;
+}
+
+.social-media {
+    flex: 1; /* Allow to take equal space */
+}
+
+.social-media h3 {
+    margin-bottom: 10px;
+}
+
+.social-media a {
+    margin: 0 10px; /* Space between icons */
+}
+
+.social-media img {
+    width: 30px; /* Set the size of the icons */
+    height: 30px; /* Maintain aspect ratio */
+    transition: transform 0.3s; /* Smooth transition for hover effect */
+}
+
+.social-media img:hover {
+    transform: scale(1.1); /* Slightly enlarge the icon on hover */
+}
+
+.location {
+    flex: 1; /* Allow to take equal space */
+}
+
+.location h3 {
+    margin-bottom: 10px;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+}
+/* Style the gallery */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.gallery img {
+    width: 150px;
+    height: auto;
+    cursor: pointer;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    transition: transform 0.2s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* Modal (hidden by default) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* Modal content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+    border: 2px solid #fff;
+    border-radius: 10px;
+}
+
+/* Caption text */
+#caption {
+    color: #fff;
+    text-align: center;
+    margin: 20px 0;
+    font-size: 18px;
+}
+
+/* Close button */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+}
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <?php include 'header.php'; ?>
+    <header>
+        <div class="logo">
+            <h1>Haiqa Boutique</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about1.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="collection.html">Collection</a></li>
+                <li><a href="contact1.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dress Collection</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+    
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Dress Collection</title>
+            <link rel="stylesheet" href="styles.css">
+        </head>
+        <body>
+        
+        <!-- Collection Section -->
+        <section id="collection">
+            <h2>Our Collection</h2>
+            <div class="gallery">
+                <img src="10a.jpeg" alt="Dress 1" class="clickable" data-index="1">
+                <img src="11a.jpeg" alt="Dress 2" class="clickable" data-index="2">
+                <img src="2.jpeg" alt="Dress 3" class="clickable" data-index="3">
+                <img src="3a.jpeg" alt="Dress 4" class="clickable" data-index="4">
+                <img src="4a.jpeg" alt="Dress 5" class="clickable" data-index="5">
+                <img src="5a.jpeg" alt="Dress 6" class="clickable" data-index="6">
+                <img src="6a.jpeg" alt="Dress 7" class="clickable" data-index="7">
+                <img src="7a.jpeg" alt="Dress 8" class="clickable" data-index="8">
+                <img src="8a.jpeg" alt="Dress 9" class="clickable" data-index="9">
+                <img src="9b.jpeg" alt="Dress 10" class="clickable" data-index="10">
+                <img src="WhatsApp Image 2024-10-20 at 11.09.13_4d640360.jpg" alt="Dress 11" class="clickable" data-index="11">
+                <img src="WhatsApp Image 2024-10-20 at 11.09.14_637bba21.jpg" alt="Dress 12" class="clickable" data-index="12">
+                <img src="WhatsApp Image 2024-10-20 at 12.30.30_901d1b1b.jpg" alt="Dress 13" class="clickable" data-index="13">
+            </div>
+        </section>
+        
+        <!-- Modal for displaying details -->
+        <div id="modal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modal-img">
+            <div id="caption"></div>
+        </div>
+        
+        <!-- JavaScript for handling the modal functionality -->
+        <script>
+            // Modal functionality
+            const modal = document.getElementById('modal');
+            const modalImg = document.getElementById('modal-img');
+            const captionText = document.getElementById('caption');
+            const closeBtn = document.getElementsByClassName('close')[0];
+            const images = document.querySelectorAll('.clickable');
+        
+            const dressDescriptions = [
+                "", // No description for index 0 (since data-index starts from 1)
+                "Dress 1: Black Frok+ duppata- Fabric: Pure Raw Silk, Crush Frok- Duppata Fabric: shamoz silk- Hand made work- Outfit Price 80000",
+                "Dress 2:  Kali Daar Frok+ Dupatta- Frock Block Print Hand made work-  Duppata Fabric: Organza with Lehnga: jamawar- Price 120000.",
+                "Dress 3:  Indian Angrakha style with  lehnga  with shawl block print- Fabric: Raw Silk- Shawl Fabric: Shamoz Silk- Full Hand made work- Expensive Matirial Naqshi Dabka- Price: 130000",
+                "Dress 4:  Kali Daar Lehnga Choli with Duppatta- Fabric (Lehnga and Dupatta):  Pure Organza- Choli Fabric: Pure Raw Silk 180 gm-  Working multi hand+ Hand made work- Price: 500000",
+                "Dress 5:Lehnga heay work Shirt+ dopatta- Fabric: Pure raw silk 180 gm-  (shirt+ lehnga) fabric: shamoz silk block print- Duppata fabric: Pure organza- price 110000 ",
+            "Dress 6: Lehnga Choli- Pure Raw silk 180gm- Price:110000.",
+            "Dress 7: 3 pcs shairt+truzar+shawl- shairt+truzar fabric pk mediam  raw silk- shawl block printed fabric shamoz silk- shawl price 70000- shairt+trozar price 40000- shawl+outfit price 100000",
+            "Dress 8:shirt+ trouzer+ shawl- (shairt+trouzer+shawl) fabric: pure raw silk-work hand made and block printed- shawl price 70000- outfit price 50000- shawl with outfit price 110000",
+            "Dress 9: shairt+sharara+doppata- shairt fabric: cotton net- duppatta Cotton net- crush shara fabric pure- hand made work- shawl with outfit price 70000",
+            "Dress 10: shairt+feused lehnga+chunrye duppata- Shirt fabric; pk medium raw silk+ lehnga feused tissue+ doppata  pure chefon chunrey- total outfit price 70000.",
+            "Dress 11: ...........",
+            "Dress 12: Shairt+ Crush shrara+ Block Print+ Hand made Shawl- Shirt Fabric: Organza- Block Print Shrara Fabric: Pure- Duppata Fabric: Shamoz silk- (shawl price) 70000+ (Shirt+ Sharara) Price 60000- Total 3 pcs  price 120000",
+            "Dress 13:Mehndi dress- Choli+ Lehnga+ Dupatta- Lehnga Fabric: Feusd Silk+ Choli Pure Raw Silk- Dupatta Fabric: Tissue- Hand made work: Gotta-  (Dupatta Price: 50000)+ (lehnga Choli Price: 80000)- (Dupatta+Outfit)Price 120000",
+
+            ];
+        
+            images.forEach(image => {
+                image.addEventListener('click', function () {
+                    const index = this.getAttribute('data-index');
+                    modal.style.display = "block";
+                    modalImg.src = this.src;
+                    captionText.innerHTML = dressDescriptions[index];
+                });
+            });
+        
+            // Close modal when 'X' is clicked
+            closeBtn.onclick = function () {
+                modal.style.display = "none";
+            }
+        
+            // Close modal if clicked outside the image
+            window.onclick = function (event) {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+        
+        
+        </body>
+        </html>
+        
+    </body>
+    </html>
+    
+
+    <!-- Footer -->
+    <?php include 'footer.php'; ?>
+    <footer>
+        <div class="footer-content">
+            <div class="social-media">
+                <h3>Follow Us</h3>
+                <a href="https://www.facebook.com/haiqaboutique.pk?mibextid=ZbWKwL" target="_blank">
+                    <img src="fbn 1.jpeg" alt="Facebook" />
+                </a>
+                <a href="https://www.instagram.com/haiqaboutique.pk?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
+                    <img src="insta 3.jpeg" alt="Instagram" />
+                </a>
+                <a href="https://www.tiktok.com/@haiqaboutique?_t=8qlYQtOSlXR&_r=1" target="_blank">
+                    <img src="tiktok.jpeg" alt="TikTok" />
+                </a>
+                <a href="https://youtu.be/Wi7OfDXEBhY?feature=shared" target="_blank">
+                    <img src="utube 2.jpeg" alt="youtube" />
+                </a>
+    
+            </div>
+            <div class="location">
+                <h3>Our Location</h3>
+                <p>Haiqa Boutique</p>
+                <p>Kalma Chowk Gulberg 3</p>
+                <p>Firdous Market Basement</p>
+                <p>Shop no 2</p>
+                <p>#03001606333</p>
+                <p>Lahore, Pakistan</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Haiqa Boutique. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    
+</body>
+</html>

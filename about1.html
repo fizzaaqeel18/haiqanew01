@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haiqa Boutique - About Us</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Royal Navbar */
+header {
+    background-color: rgb(178, 14, 129);
+    color: #fff;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    margin-left: 30px;
+    font-family: 'Georgia', serif;
+    font-size: 2.5em;
+    color: #fff5e1;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin-right: 30px;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff5e1;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;
+}
+
+/* Hero Section */
+#home {
+    background-image: url("WhatsApp\ Image\ 2024-10-20\ at\ 11.09.13_2ee201b2.jpg");
+    background-size: cover;
+    background-position: center;
+   
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content h2 {
+    font-size: 3.5em;
+    font-family: 'Georgia', serif;
+}
+
+.hero-content p {
+    font-size: 1.5em;
+    margin
+}
+.btn {
+    background-color: #ffcc00;
+    color: #333;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #d4a600;
+}
+
+/* Footer */
+footer {
+    background-color: rgb(178, 14, 129);
+    color: #fff5e1;
+    text-align: center;
+    padding: 20px 0;
+    font-family: 'Georgia', serif;
+}
+
+.social-links {
+    margin: 15px 0;
+}
+
+.social-links a {
+    color: #fff5e1;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+.social-links a:hover {
+    color: #ffcc00;
+}
+/* About Section */
+#about {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#about h2 {
+    font-family: 'Georgia', serif;
+    font-size: 3em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#about p {
+    font-size: 1.2em;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    padding: 0 20px;
+}
+
+#about img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 0 auto;
+    display: block;
+}
+/* Footer Styles */
+footer {
+    background-color: rgb(178, 14, 129); /* Dark background */
+    color: #fff; /* White text color */
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around; /* Space out the content */
+    align-items: center; /* Center vertically */
+    margin-bottom: 20px;
+}
+
+.social-media {
+    flex: 1; /* Allow to take equal space */
+}
+
+.social-media h3 {
+    margin-bottom: 10px;
+}
+
+.social-media a {
+    margin: 0 10px; /* Space between icons */
+}
+
+.social-media img {
+    width: 30px; /* Set the size of the icons */
+    height: 30px; /* Maintain aspect ratio */
+    transition: transform 0.3s; /* Smooth transition for hover effect */
+}
+
+.social-media img:hover {
+    transform: scale(1.1); /* Slightly enlarge the icon on hover */
+}
+
+.location {
+    flex: 1; /* Allow to take equal space */
+}
+
+.location h3 {
+    margin-bottom: 10px;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+}
+
+
+</style>
+</head>
+<body>
+
+    <!-- Header -->
+    <?php include 'header.php'; ?>
+    <header>
+        <div class="logo">
+            <h1>Haiqa Boutique</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about1.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="collection.html">Collection</a></li>
+                <li><a href="contact1.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>At Haiqa Boutique, we offer timeless and elegant designs for fashion-forward individuals. Our boutique focuses on creating exclusive styles using high-quality fabrics, and we pride ourselves on blending modern trends with traditional aesthetics.</p>
+        <img src="WhatsApp Image 2024-10-20 at 12.30.30_901d1b1b.jpg" alt="About Us">
+    </section>
+
+    <!-- Footer -->
+    <?php include 'footer.php'; ?>
+    <footer>
+        <div class="footer-content">
+            <div class="social-media">
+                <h3>Follow Us</h3>
+                <a href="https://www.facebook.com/haiqaboutique.pk?mibextid=ZbWKwL" target="_blank">
+                    <img src="fbn 1.jpeg" alt="Facebook" />
+                </a>
+                <a href="https://www.instagram.com/haiqaboutique.pk?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
+                    <img src="insta 3.jpeg" alt="Instagram" />
+                </a>
+                <a href="https://www.tiktok.com/@haiqaboutique?_t=8qlYQtOSlXR&_r=1" target="_blank">
+                    <img src="tiktok.jpeg" alt="TikTok" />
+                </a>
+                <a href="https://youtu.be/Wi7OfDXEBhY?feature=shared" target="_blank">
+                    <img src="utube 2.jpeg" alt="youtube" />
+                </a>
+    
+            </div>
+            <div class="location">
+                <h3>Our Location</h3>
+                <p>Haiqa Boutique</p>
+                <p>Kalma Chowk Gulberg 3</p>
+                <p>Firdous Market Basement</p>
+                <p>Shop no 2</p>
+                <p>#03001606333</p>
+                <p>Lahore, Pakistan</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Haiqa Boutique. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+</body>
+</html>
